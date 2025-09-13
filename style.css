@@ -4,7 +4,7 @@ body {
   background-color: #bec0c2;
 }
 
-header {
+header, footer {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
@@ -13,9 +13,32 @@ header {
   padding-right: 10px;
 }
 
+footer {
+  color: white;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+aside {
+  border: 2px solid #ffb71b;
+  background-color: white;
+  width: 20%;
+  margin-top: 10px;
+  padding: 10px;
+}
+
+#body-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+main {
+  width: 70%;
+}
+
 section {
-  padding-left: 25%;
-  padding-right: 25%;
+  padding-left: 5%;
+  padding-right: 10%;
 }
 
 @media (max-width: 600px) {
@@ -26,6 +49,24 @@ section {
   section {
     padding-left: 10px;
     padding-right: 10px;
+  }
+
+  .card-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .card {
+    width: 80% !important;
+  }
+
+  aside {
+    display: none;
+  }
+
+  main {
+    width: 100%;
   }
 }
 
@@ -69,4 +110,11 @@ section {
 .card-image {
   width: 80%;
   aspect-ratio: 1/1;
+}
+
+li {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
