@@ -13,6 +13,22 @@ header {
   padding-right: 10px;
 }
 
+section {
+  padding-left: 25%;
+  padding-right: 25%;
+}
+
+@media (max-width: 600px) {
+  .header-options {
+    display: none;
+  }
+
+  section {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
 .page-title {
   color: #ffb71b;
 }
@@ -25,4 +41,31 @@ header {
 .header-options > a {
   text-decoration: none;
   color: white;
+}
+
+.section-header {
+  text-align: center;
+}
+
+.image {
+  width: 100%;
+}
+
+.card-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card {
+  width: 30%;
+  display: flex;
+  background-color: #f0f0f0;
+  flex-direction: column;
+  align-items: center;
+  padding: 5px;
+  border: 2px solid #ffb71b;
+}
+
+.card-image {
+  width: 80%;
 }
