@@ -118,3 +118,8 @@ li {
   flex-direction: column;
   gap: 10px;
 }
+
+.favorites-button {
+  background-color:#0f2044;
+  color:#ffb71b;
+}
