@@ -106,6 +106,7 @@ function calculateNewTotal() {
 
   let favorites = summary.querySelectorAll('div');
 
+  // Loop through all favorites and add the prices together based on span (without the $ sign)
   for (let i = 0; i < favorites.length; i++) {
     var price = favorites[i].querySelector('span').textContent.substring(1);
 
