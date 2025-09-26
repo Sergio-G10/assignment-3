@@ -13,7 +13,7 @@ main.appendChild(summary);
 
 // Loop through all cards and add price tag and button
 for (let i = 0; i < cards.length; i++) {
-  let priceTag = document.createElement('div.price');
+  let priceTag = document.createElement('div');
   let price = document.createTextNode('$' + (i+1));
   priceTag.appendChild(price);
   priceTag.classList.add('price-tag');
@@ -47,6 +47,15 @@ function addToFavorites(cardID) {
   card.classList.add('highlight');
   let currentButton = card.querySelector('button');
   currentButton.textContent = 'Remove Favorite';
+
+  var newFavorite = document.createElement('div');
+  newFavorite.id = cardID;
+  var favoriteName = card.querySelector('h5').textContent;
+  var price = card.querySelector('div').textContent;
+  var favoriteText = document.createTextNode(favoriteName + ': ' + price);
+  
+  newFavorite.appendChild(favoriteText);
+  summary.appendChild(newFavorite);
 }
 
 function removeFavorite(cardID) {
@@ -55,4 +64,7 @@ function removeFavorite(cardID) {
   card.classList.remove('highlight');
   let currentButton = card.querySelector('button');
   currentButton.textContent = 'Add to Favorites';
+
+  var favorite = document.getElementById(cardID);
+  favorite.remove();
 }
