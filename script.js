@@ -69,16 +69,16 @@ function addToFavorites(cardID) {
   currentButton.textContent = 'Remove Favorite';
 
   // Create new favorite div and give unique ID based on card number
-  var newFavorite = document.createElement('div');
+  let newFavorite = document.createElement('div');
   newFavorite.id = cardID;
-  var favoriteName = card.querySelector('h5').textContent;
+  let favoriteName = card.querySelector('h5').textContent;
 
-  var price = document.createElement('span');
-  var priceText = card.querySelector('div').textContent;
-  var priceTextNode = document.createTextNode(priceText);
+  let price = document.createElement('span');
+  let priceText = card.querySelector('div').textContent;
+  let priceTextNode = document.createTextNode(priceText);
   price.appendChild(priceTextNode);
 
-  var favoriteText = document.createTextNode(favoriteName + ': ');
+  let favoriteText = document.createTextNode(favoriteName + ': ');
   
   newFavorite.appendChild(favoriteText);
   newFavorite.appendChild(price);
@@ -95,7 +95,7 @@ function removeFavorite(cardID) {
   currentButton.textContent = 'Add to Favorites';
 
   // Remove favorite div based on card number
-  var favorite = document.getElementById(cardID);
+  let favorite = document.getElementById(cardID);
   favorite.remove();
 
   calculateNewTotal();
@@ -108,7 +108,7 @@ function calculateNewTotal() {
 
   // Loop through all favorites and add the prices together based on span (without the $ sign)
   for (let i = 0; i < favorites.length; i++) {
-    var price = favorites[i].querySelector('span').textContent.substring(1);
+    let price = favorites[i].querySelector('span').textContent.substring(1);
 
     total += parseInt(price);
   }
