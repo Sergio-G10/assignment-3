@@ -123,3 +123,11 @@ li {
   background-color:#0f2044;
   color:#ffb71b;
 }
+
+.price-tag {
+  border: #ffb71b solid 2px;
+}
+
+.highlight {
+  border: #0f2044 solid 5px;
+}
