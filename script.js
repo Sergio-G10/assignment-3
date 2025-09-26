@@ -1,6 +1,17 @@
 // Select all menu items
 let cards = document.querySelectorAll('.card');
 
+// Add empty favorites summary
+let main = document.querySelector('main');
+let summary = document.createElement('div');
+summary.id = 'summary';
+let summaryHeading = document.createElement('h3');
+let summaryHeadingText = document.createTextNode('Favorites Summary');
+summaryHeading.appendChild(summaryHeadingText);
+summary.appendChild(summaryHeading);
+main.appendChild(summary);
+
+// Loop through all cards and add price tag and button
 for (let i = 0; i < cards.length; i++) {
   let priceTag = document.createElement('div.price');
   let price = document.createTextNode('$' + (i+1));
@@ -20,6 +31,7 @@ for (let i = 0; i < cards.length; i++) {
   cards[i].appendChild(button);
 }
 
+// Toggle if it is adding to favorites or removing
 function toggleFavorite(cardID) {
   let card = cards[cardID];
   if (card.classList.contains('highlight')) {
@@ -35,7 +47,6 @@ function addToFavorites(cardID) {
   card.classList.add('highlight');
   let currentButton = card.querySelector('button');
   currentButton.textContent = 'Remove Favorite';
-  console.log(card);
 }
 
 function removeFavorite(cardID) {
